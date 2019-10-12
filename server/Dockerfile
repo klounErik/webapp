@@ -2,6 +2,9 @@ FROM node:12.8.0 AS server
 WORKDIR /usr/app
 
 COPY package.json .
-RUN npm install
+RUN npm install express cors
+
+EXPOSE 8080
+EXPOSE 80
 
 COPY . .
