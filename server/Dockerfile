@@ -1,11 +1,16 @@
 FROM node:12.11.1
 WORKDIR /usr/app
 
-COPY package.json .
-RUN npm install
+RUN mkdir -p /usr/src/app
 
-EXPOSE 8080
+WORKDIR /usr/src/app
 
 COPY . .
 
-CMD ["node", "index"]
+RUN npm install
+
+
+EXPOSE 8080
+
+
+CMD ["npm", "run", "start"]
