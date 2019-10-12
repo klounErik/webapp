@@ -5,5 +5,6 @@ COPY package.json .
 RUN npm install express cors
 
 EXPOSE 8080
+EXPOSE 80
 
 COPY . .
