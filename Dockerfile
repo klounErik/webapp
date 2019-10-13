@@ -7,11 +7,9 @@ COPY . ./
 RUN yarn build
 
 FROM node:12.8.0
-WORKDIR /usr/app
+WORKDIR /usr/src/app
 
 EXPOSE 9000
 EXPOSE 80
-
-COPY . .
 
 CMD [ "npm", "run", "dev" ]
