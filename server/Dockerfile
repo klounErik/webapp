@@ -1,10 +1,16 @@
-FROM node:10
+FROM node:12.11.1
 WORKDIR /usr/app
 
-COPY package.json .
-RUN npm install
+RUN mkdir -p /usr/src/app
 
-EXPOSE 8080
-EXPOSE 80
+WORKDIR /usr/src/app
 
 COPY . .
+
+RUN npm install
+
+
+EXPOSE 3000
+
+
+CMD ["npm", "run", "start"]
